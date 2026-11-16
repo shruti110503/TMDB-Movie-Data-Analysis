@@ -120,9 +120,6 @@ Make sure the dataset file `tmdb-movies.csv` is present in the same directory.
 
 - [The Movie Database (TMDB)](https://www.themoviedb.org/)
 - [TMDB Movie Metadata – Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata)
-- [Original Project Reference – Shaimaa](https://github.com/xShaimaa/Data-Analysis-Projects/tree/main/01-TMDB-Dataset-Analysis)
-
-This project is adapted from the original analysis. Credit goes to the original author for the reference work.
 
 ---
 
