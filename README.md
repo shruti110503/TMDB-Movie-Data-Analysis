@@ -1,76 +1,129 @@
-# TMDB Movies Dataset Analysis 
-### Udacity Become a Data Analyst Nanodegree | Project 2
+# 🎬 TMDB Movie Data Analysis
 
-| Contents 											 	   	|
-| -------- 											 	   	|
-| [Dataset Description](#Dataset-Description)			   	|
-| [Columns Descreption](#Columns-Descreption) 		   		|
-| [Questions for Analysis](#Questions-for-Analysis)	   		|
-| [Data Wrangling](#Data-Wrangling)					   		|
-| [Data Cleaning](#Data-Cleaning)						   	|
-| [Exploratory Data Analysis](#Exploratory-Data-Analysis)	|
-| [Built with](#Built-with)							   		|
+An Exploratory Data Analysis (EDA) project on the TMDB movie dataset using Python to uncover insights into movie popularity, genres, budgets, and revenue.
 
-## Dataset Description: 
-This data set contains information about 10,000 movies extracted from [TMDB](https://www.themoviedb.org/). The dataset contains movies from 1960 to 2015. Including user ratings and revenue. Original data from [Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata)
+## 📌 Project Overview
 
-## Columns Descreption:
-- `id, imdb_id`: unique id or imdb id for each movie on TMDB
-- `popularity`: a metric used to measure the popularity of the movie.
-- `budget`:the total budget of the moviein USD.
-- `revenue`:the total revenue of the movie in USD.
-- `original_title`: the original title of the movie.
-- `cast`:the names of the cast of the movie separated by "|".
-- `homepage`: the website of the movie (if it existed).
-- `director`:name(s) of the director(s) of the movie (separated by "|" if there are more than one director).
-- `tagline`:a catchphrase describing the movie.
-- `keywords`: keywords related to the movie.
-- `overview`:summary of the plot of the movie.
-- `runtime`:total runtime of the movie in minutes.
-- `genres`: genres of the movie separated by "|".
-- `production_companies`:production compan(y/ies) of the movie.
-- `release_date`:release date of the movie.
-- `vote_count`:number of voters of te movie.
-- `vote_average`:the average user rating of the movie
-- `release_year`:release year of the movie (from 1960 to 2015)
-- `budget_adj`:the total budget of the moviein USD in terms of 2010 dollars, accounting for inflation over time.
-- `revenue_adj`:the total budget of the movie in USD in terms of 2010 dollars, accounting for inflation over time.
+This project analyzes movie data from 1960 to 2015 to identify trends and relationships in the movie industry. It explores how movie popularity relates to revenue, identifies the most frequently produced genres, and investigates the relationship between movie budgets and box office performance.
 
-## Questions for Analysis:
-- Do movies with high popularity achive high revenvue?
-- What are the most filmed genres in this whole dataset?
-- Is there a correlation between a movie budget and its revenue?
+## 🎯 Research Questions
 
-## Data Wrangling:
-Our data can be found on `tmdb-movies.csv` file provided on this repository. It is an edited version of the original Kaggle's [TMDB 5000 Movie Dataset](https://www.kaggle.com/tmdb/tmdb-movie-metadata) provided by Udacity on the Become a Data Analyst Nanodegree Program. 
+1. Do movies with high popularity achieve higher revenue?
+2. What are the most frequently produced movie genres?
+3. Is there a correlation between a movie's budget and its revenue?
 
-## Data Cleaning:
-**Main Observations:**
-1. Our dataset consisted of a total of 10866 rows and 21 columns.
-2. We had only 1 duplicated row which had been dropped.
-3. Some columns wont be useful in answering our questions so they were dropped.
-4. Few columns had many missing values that needed to be handled.
-5. Columns `cast` `director` `genre` had values saperated with a '|'.
-6. `release_date`'s data type needed to be casted.
-7. We could append a column for the movie `profit` using the formula: $profit = revenue - budget$.
-8. `vote_average` better be presented as a catecorical variable that groubs multible ratings values.
-9. We might also catigorize `profit` column for better EDA
+## 📂 Dataset Information
 
-## Exploratory Data Analysis:
-After finishing our dataset cleaning, we endded up with a total of 10840 records and 10 columns. The dataset now has no duplicates nor null values, and the data types are consistant with suitable categorical variable to address our questions.
-We then perfomed some analytics and created some visualizations to answer our targeted questions.
-### Q1: Do movies with high popularity achive high revenvue?
-> More popular movies recieve way more revenue than the less popular movies.
+- **Dataset:** TMDB Movies Dataset
+- **Source:** [Kaggle – TMDB Movie Metadata](https://www.kaggle.com/tmdb/tmdb-movie-metadata)
+- **Time Period:** 1960–2015
+- **Initial Records:** 10,866
+- **Records After Cleaning:** 10,840
+- **Initial Columns:** 21
+- **Final Columns:** 10
 
-### Q2: What are the most filmed genres in this whole dataset?
-> - `Drama`, `Comedy` and `Action` are the most three filmed genres in total of 10839 movies in our dataset.
-> - `Drama` genre alone is filmed 22.6% of the times on our dataset.
+The dataset includes movie titles, genres, popularity, budget, revenue, runtime, ratings, release dates, and other movie-related attributes.
 
-### Q3: Is there a correlation between a movie budget and its revenue?
-> There is positive correlation between `budget` and `revenue`, indecating a relation between them with little outliers found. 
+## 🛠️ Technologies Used
 
-## Built with:
-- JupyterLab
-- Python3
+- Python 3
+- Jupyter Notebook
 - Pandas
-- Numpy
+- NumPy
+- Matplotlib
+- Seaborn
+
+## 🔍 Analysis & Methodology
+
+### 1. Data Wrangling
+- Loaded and explored the TMDB dataset.
+- Examined data structure, columns, and data types.
+- Identified missing values and duplicate records.
+
+### 2. Data Cleaning
+- Removed duplicate records.
+- Dropped unnecessary columns.
+- Handled missing values.
+- Processed categorical data containing multiple values separated by `|`.
+- Converted the release date column into an appropriate date format.
+- Created a new `profit` column using:
+
+  `Profit = Revenue - Budget`
+
+- Categorized movie ratings and profits for further analysis.
+
+### 3. Exploratory Data Analysis (EDA)
+
+**Q1. Do movies with high popularity achieve higher revenue?**
+
+Finding: More popular movies generate considerably higher revenue than less popular movies.
+
+**Q2. What are the most frequently produced movie genres?**
+
+Findings:
+- Drama, Comedy, and Action are the three most frequently occurring genres.
+- Drama accounts for approximately 22.6% of the movies analyzed.
+
+**Q3. Is there a correlation between a movie's budget and its revenue?**
+
+Finding: Movie budgets and revenues show a positive correlation, indicating that movies with higher budgets generally tend to generate higher revenue, although some outliers exist.
+
+## 📈 Key Insights
+
+- Movies with higher popularity tend to generate higher revenue.
+- Drama is the most frequently represented genre in the dataset.
+- Comedy and Action are also among the most popular genres.
+- Movie budget and revenue have a positive relationship.
+- Exploratory data analysis helps identify patterns and relationships within movie industry data.
+
+## 📁 Project Structure
+
+```text
+TMDB-Movie-Data-Analysis/
+│
+├── TMDB-dataset-analysis.ipynb
+├── tmdb-movies.csv
+└── README.md
+```
+
+## 🚀 How to Run the Project
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/shruti110503/TMDB-Movie-Data-Analysis.git
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd TMDB-Movie-Data-Analysis
+```
+
+**3. Install the required libraries**
+
+```bash
+pip install pandas numpy matplotlib seaborn jupyter
+```
+
+**4. Launch Jupyter Notebook**
+
+```bash
+jupyter notebook
+```
+
+**5. Open and run `TMDB-dataset-analysis.ipynb`.**
+
+Make sure the dataset file `tmdb-movies.csv` is present in the same directory.
+
+## 🙌 Acknowledgements
+
+- [The Movie Database (TMDB)](https://www.themoviedb.org/)
+- [TMDB Movie Metadata – Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata)
+- [Original Project Reference – Shaimaa](https://github.com/xShaimaa/Data-Analysis-Projects/tree/main/01-TMDB-Dataset-Analysis)
+
+This project is adapted from the original analysis. Credit goes to the original author for the reference work.
+
+---
+
+**Author:** Shruti Shukla
